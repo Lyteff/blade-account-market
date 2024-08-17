@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            border: 1px solid transparent;
+            background: #333;
+            transition: background 0.3s, border 0.3s;
+        }
+        .btn:hover {
+            background: #555;
+        }
+        .btn-highlight {
+            background: #00bfff;
+            border: 1px solid #00bfff;
+        }
+        .btn-highlight:hover {
+            background: #1e90ff;
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            z-index: 1000;
+        }
+        .popup-content {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            max-width: 90%;
+            margin: auto;
+        }
+        .popup-content p {
+            margin: 0 0 20px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+        }
+        .hidden {
+            display: none;
+        }
+        .social-icons img {
+            width: 40px; /* Adjust size as needed */
+            height: auto;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- Popup Message -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <p>You are about to be forwarded to the admin. Please drop your login details for verification. The process may take some time.</p>
+        </div>
+    </div>
+
+    <div class="container" id="contact-options" class="hidden">
+        <h1>Contact the Admin</h1>
+        <button class="btn" id="email-btn">Contact via Email</button>
+        <button class="btn" id="whatsapp-btn">Contact via WhatsApp</button>
+
+        <div id="whatsapp-options" class="hidden">
+            <button class="btn btn-highlight" id="admin1-btn">Admin 1</button>
+            <button class="btn btn-highlight" id="admin2-btn">Admin 2</button>
+        </div>
+
+        <div id="admin1-options" class="hidden">
+            <button class="btn btn-highlight" onclick="window.open('https://wa.me/+2349131120109?text=Hi%20I%20have%20an%20account%20for%20sale', '_blank')">Contact Admin 1 on WhatsApp</button>
+            <button class="btn" onclick="copyToClipboard('https://wa.me/+2349131120109?text=Hi%20I%20have%20an%20account%20for%20sale')">Link not working? Copy link</button>
+            <button class="btn" onclick="displayNumber('+2349131120109')">Display Number</button>
+        </div>
+
+        <div id="admin2-options" class="hidden">
+            <button class="btn btn-highlight" onclick="window.open('https://wa.me/+2347053486224?text=Hi%20I%20have%20an%20account%20for%20sale', '_blank')">Contact Admin 2 on WhatsApp</button>
+            <button class="btn" onclick="copyToClipboard('https://wa.me/+2347053486224?text=Hi%20I%20have%20an%20account%20for%20sale')">Link not working? Copy link</button>
+            <button class="btn" onclick="displayNumber('+2347053486224')">Display Number</button>
+        </div>
+    </div>
+
+    <script>
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('contact-options').style.display = 'block';
+        }
+
+        document.getElementById('email-btn').addEventListener('click', function() {
+            window.location.href = 'mailto:destinysliva680@gmail.com';
+        });
+
+        document.getElementById('whatsapp-btn').addEventListener('click', function() {
+            document.getElementById('whatsapp-options').classList.toggle('hidden');
+        });
+
+        document.getElementById('admin1-btn').addEventListener('click', function() {
+            document.getElementById('admin1-options').classList.toggle('hidden');
+        });
+
+        document.getElementById('admin2-btn').addEventListener('click', function() {
+            document.getElementById('admin2-options').classList.toggle('hidden');
+        });
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Link copied to clipboard!');
+            }, function(err) {
+                alert('Failed to copy the link.');
+            });
+        }
+
+        function displayNumber(number) {
+            alert('Phone number: ' + number);
+        }
+    </script>
+</body>
+</html>
+

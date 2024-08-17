@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Blade Social Media Account Market</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #000000, #003366); /* Blue and black gradient background */
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            background: #003366;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            border-bottom: 3px solid #007bff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .welcome-message {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+        button {
+            background: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 25px; /* Rounded edges */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+        }
+        button:hover, button.active {
+            background: #0056b3;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            transform: scale(1.05); /* Highlight effect */
+        }
+        .dropdown {
+            display: none;
+            margin-top: 20px;
+        }
+        .dropdown button {
+            background: #333;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            margin: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .dropdown button:hover {
+            background: #555;
+        }
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.3);
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+        footer p {
+            margin: 10px 0;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>T-Blade Social Media Account Market</h1>
+    </header>
+    
+    <section>
+        <div class="welcome-message">
+            <p>Welcome to T-Blade, the premier marketplace for verified social media accounts. Whether you're looking to buy or sell TikTok, Instagram, Facebook, or Twitter accounts, you've come to the right place. We ensure all accounts are genuine and meet high standards of quality.</p>
+        </div>
+        <button id="proceedButton">Proceed to Buy Now</button>
+        <div id="dropdown" class="dropdown">
+            <button onclick="navigateTo('buy.html')" id="buyButton">Buy Accounts</button>
+            <button onclick="navigateTo('sell.html')" id="sellButton">Sell Accounts</button>
+        </div>
+    </section>
+    <footer style="
+    background: #1a1a1a; 
+    color: #fff; 
+    padding: 10px; 
+    text-align: center; 
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.3); 
+    width: 100%; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+">
+    <p style="margin: 5px 0; font-size: 12px;">&copy; 2024 T-Blade Social Media Account Market</p>
+    <div class="social-icons" style="
+        margin-top: 5px; 
+        display: flex; 
+        justify-content: center; 
+        gap: 10px;
+    ">
+        <a href="#" style="display: inline-block; width: 30px; height: 30px;">
+            <img src="facebooklogo.png" alt="Facebook" style="width: 100%; height: 100%; object-fit: contain;">
+        </a>
+        <a href="#" style="display: inline-block; width: 30px; height: 30px;">
+            <img src="twitterlogo.png" alt="Twitter" style="width: 100%; height: 100%; object-fit: contain;">
+        </a>
+        <a href="#" style="display: inline-block; width: 30px; height: 30px;">
+            <img src="instagramlogo.jpeg" alt="Instagram" style="width: 100%; height: 100%; object-fit: contain;">
+        </a>
+        <a href="#" style="display: inline-block; width: 50px; height: 50px;"> <!-- Larger TikTok logo -->
+            <img src="tiktoklogo.png" alt="TikTok" style="width: 75%; height: 75%; object-fit: contain;">
+        </a>
+    </div>
+    <div style="margin-top: 5px;">
+        <a href="moreinfo.html#about" style="color: #fff; text-decoration: none; margin: 0 5px; font-size: 12px;">About Us</a> |
+        <a href="moreinfo.html#terms" style="color: #fff; text-decoration: none; margin: 0 5px; font-size: 12px;">Terms of Service</a>
+    </div>
+</footer>
+
+    
+    
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // No loading screen code
+        });
+
+        document.getElementById('proceedButton').addEventListener('click', function() {
+            document.getElementById('dropdown').style.display = 'block';
+        });
+
+        document.querySelectorAll('.dropdown button').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.dropdown button').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
